@@ -62,8 +62,8 @@ export default async function DestinationPage({ params }: { params: Promise<Para
       <article className="destination">
         <header className="dest-hero">
           <div className="wrap">
-            <Link className="dest-back" href="/#perjalanan">
-              Kembali ke rute
+            <Link className="dest-back" href={`/perjalanan/hari-${destination.day}/`}>
+              Kembali ke Hari {destination.day}
             </Link>
 
             <div className="dest-hero-grid">
