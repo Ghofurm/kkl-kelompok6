@@ -29,7 +29,7 @@ Semua konten perjalanan ada di satu berkas: `data/trip.ts`.
 - `photos` — sumber, ukuran, alt text, dan kredit setiap foto.
 - `site` — judul, deskripsi, tautan PDF laporan, dan metadata kelompok.
 
-Setelah mengubah data, halaman dan sitemap ikut berubah. Untuk menambah destinasi baru, tambahkan objek di `destinations`; `generateStaticParams` akan membuat halamannya otomatis.
+Setelah mengubah data, halaman dan sitemap ikut berubah. Halaman per hari dibuat otomatis dari `days`; untuk menambah destinasi baru, tambahkan objek di `destinations` dan `generateStaticParams` akan membuat halamannya otomatis.
 
 ### Yang perlu diganti sebelum dipublikasikan
 
@@ -49,7 +49,7 @@ Foto yang dipakai disimpan sebagai WebP di `public/images/` dan dimuat secara la
 ## Struktur
 
 ```
-app/                 halaman utama, detail destinasi, 404, sitemap, robots
+app/                 halaman utama, menu & detail hari, detail destinasi, 404, sitemap, robots
 components/          bagian halaman dan komponen interaktif
 data/trip.ts         seluruh konten perjalanan
 public/images/       foto WebP
@@ -60,4 +60,4 @@ assets/credits.json  catatan sumber foto
 
 ## Catatan desain
 
-Arah visual: halaman sebagai benda cetak perjalanan. Tiket, lembar manifest, berkas kunjungan, kartu paspor, dan kartu pos menjadi bahasa halaman. Palet hijau-hitam, tulang, dan jade; typeface Literata. Tema terang mengikuti nuansa "siang pantai"; tema gelap adalah "malam Bali". Interaksi utama adalah pemilih hari pada peta rute; galeri punya filter dan lightbox.
+Arah visual: halaman sebagai benda cetak perjalanan. Tiket, lembar manifest, berkas kunjungan, kartu paspor, dan kartu pos menjadi bahasa halaman. Palet hijau-hitam, tulang, dan jade; typeface Literata. Tema terang mengikuti nuansa "siang pantai"; tema gelap adalah "malam Bali". Alur perjalanan dibuka lewat menu Hari 1–5 di halaman utama, lalu setiap hari punya halaman rangkuman sendiri. Galeri punya filter dan lightbox.
