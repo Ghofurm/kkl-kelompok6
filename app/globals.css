@@ -1443,7 +1443,9 @@ body:has(.menu-sheet[open]) {
 .passport-photo {
   display: grid;
   place-items: center;
-  height: clamp(9rem, 20vw, 12rem);
+  width: 100%;
+  /* Potret 16:9: lebar:tinggi = 9:16. */
+  aspect-ratio: 9 / 16;
   margin-block: 0.9rem;
   overflow: clip;
   background: var(--field-sea);

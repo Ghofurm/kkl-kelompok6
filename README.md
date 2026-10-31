@@ -49,7 +49,7 @@ Foto tempat yang dipakai disimpan sebagai WebP di `public/images/` dan dimuat se
 
 Foto profil disimpan terpisah di `public/images/crew/`. Beri nama file sesuai NPM anggota, misalnya `24670008.webp`. Format yang didukung: `.webp`, `.jpg`, `.jpeg`, `.png`, dan `.avif`.
 
-Foto dibaca otomatis saat build. Anggota yang belum punya file foto tetap tampil dengan inisial, jadi menambah atau menghapus foto cukup dengan menaruh atau menghapus file di folder tersebut tanpa mengubah kode.
+Foto dibaca otomatis saat build. Anggota yang belum punya file foto tetap tampil dengan inisial, jadi menambah atau menghapus foto cukup dengan menaruh atau menghapus file di folder tersebut tanpa mengubah kode. Foto tidak perlu dipotong manual: bingkai kartu memakai rasio potret 9:16 (16:9 tegak), dan foto bentuk apa pun akan mengisi bingkai dengan `object-fit: cover`.
 
 ## Struktur
 
