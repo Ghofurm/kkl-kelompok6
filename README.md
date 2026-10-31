@@ -24,7 +24,7 @@ Semua konten perjalanan ada di satu berkas: `data/trip.ts`.
 
 - `days` — jadwal lima hari dan semua pemberhentian.
 - `destinations` — halaman detail destinasi (slug, cerita, catatan, foto/drawing).
-- `crew` — nama, NIM, dan inisial anggota.
+- `crew` — nama, NPM, dan inisial anggota.
 - `gallery` — foto yang muncul di galeri dan di halaman detail.
 - `photos` — sumber, ukuran, alt text, dan kredit setiap foto.
 - `site` — judul, deskripsi, tautan PDF laporan, dan metadata kelompok.
@@ -47,7 +47,7 @@ Foto tempat yang dipakai disimpan sebagai WebP di `public/images/` dan dimuat se
 
 ### Foto profil anggota
 
-Foto profil disimpan terpisah di `public/images/crew/`. Beri nama file sesuai NIM anggota, misalnya `24670008.webp`. Format yang didukung: `.webp`, `.jpg`, `.jpeg`, `.png`, dan `.avif`.
+Foto profil disimpan terpisah di `public/images/crew/`. Beri nama file sesuai NPM anggota, misalnya `24670008.webp`. Format yang didukung: `.webp`, `.jpg`, `.jpeg`, `.png`, dan `.avif`.
 
 Foto dibaca otomatis saat build. Anggota yang belum punya file foto tetap tampil dengan inisial, jadi menambah atau menghapus foto cukup dengan menaruh atau menghapus file di folder tersebut tanpa mengubah kode.
 
@@ -59,7 +59,7 @@ components/           bagian halaman dan komponen interaktif
 data/trip.ts          seluruh konten perjalanan
 lib/crew-photos.ts    pembaca otomatis foto profil anggota
 public/images/        foto tempat WebP
-public/images/crew/   foto profil anggota (nama file = NIM)
+public/images/crew/   foto profil anggota (nama file = NPM)
 public/laporan/       PDF ringkasan
 scripts/              pembuat PDF ringkasan
 assets/credits.json   catatan sumber foto

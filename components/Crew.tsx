@@ -16,10 +16,10 @@ export function Crew() {
 
         <ul className="crew-grid">
           {crew.map((member, index) => {
-            const photo = photos[member.nim];
+            const photo = photos[member.npm];
 
             return (
-              <li className={`passport ${index % 2 === 1 ? "passport--alt" : ""}`} key={member.nim}>
+              <li className={`passport ${index % 2 === 1 ? "passport--alt" : ""}`} key={member.npm}>
                 <div className="passport-photo">
                   {photo ? (
                     <img
@@ -35,7 +35,7 @@ export function Crew() {
 
                 <div className="passport-name">
                   <h3>{member.name}</h3>
-                  <p>NIM {member.nim}</p>
+                  <p>NPM {member.npm}</p>
                   <p className="passport-card-label">Paspor KKL · Grup 6</p>
                 </div>
 

@@ -640,21 +640,21 @@ export const destinations: Destination[] = [
 
 export type CrewMember = {
   name: string;
-  nim: string;
+  npm: string;
   initials: string;
 };
 
 export const crew: CrewMember[] = [
-  { name: "Muchammad Abdul Ghofur", nim: "24670008", initials: "MAG" },
-  { name: "Farel Ivalyanka Maulana", nim: "24670021", initials: "FIM" },
-  { name: "Vahrik Cahyo Eko Priyanto", nim: "24670059", initials: "VCEP" },
-  { name: "Nevri Amelia Putri", nim: "24670061", initials: "NAP" },
-  { name: "Alvin Praditya Julistyar", nim: "24670070", initials: "APJ" },
-  { name: "Naufal Hisyam Ramdani", nim: "24670081", initials: "NHR" },
-  { name: "Juniari Nur Shofa", nim: "24670082", initials: "JNS" },
-  { name: "Nabilla Annanta Syafi'ie", nim: "24670127", initials: "NAS" },
-  { name: "Shaktar Marchiano Gyanendra", nim: "24670129", initials: "SMG" },
-  { name: "Selvy Ana Safara", nim: "24670137", initials: "SAS" },
+  { name: "Muchammad Abdul Ghofur", npm: "24670008", initials: "MAG" },
+  { name: "Farel Ivalyanka Maulana", npm: "24670021", initials: "FIM" },
+  { name: "Vahrik Cahyo Eko Priyanto", npm: "24670059", initials: "VCEP" },
+  { name: "Nevri Amelia Putri", npm: "24670061", initials: "NAP" },
+  { name: "Alvin Praditya Julistyar", npm: "24670070", initials: "APJ" },
+  { name: "Naufal Hisyam Ramdani", npm: "24670081", initials: "NHR" },
+  { name: "Juniari Nur Shofa", npm: "24670082", initials: "JNS" },
+  { name: "Nabilla Annanta Syafi'ie", npm: "24670127", initials: "NAS" },
+  { name: "Shaktar Marchiano Gyanendra", npm: "24670129", initials: "SMG" },
+  { name: "Selvy Ana Safara", npm: "24670137", initials: "SAS" },
 ];
 
 export const gallery = [
