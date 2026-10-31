@@ -41,9 +41,9 @@ export function SiteHeader() {
 
       <div className="header-tools">
         <ThemeToggle />
-        <a className="btn btn--small header-cta" href={site.reportUrl} download>
-          Unduh laporan
-        </a>
+        <Link className="btn btn--small header-cta" href={site.reportUrl}>
+          Status laporan
+        </Link>
         <button
           className="menu-button"
           type="button"
@@ -77,9 +77,9 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <a href={site.reportUrl} download onClick={() => setMenuOpen(false)}>
-              Unduh laporan
-            </a>
+            <Link href={site.reportUrl} onClick={() => setMenuOpen(false)}>
+              Status laporan
+            </Link>
           </nav>
           <p className="menu-sheet__meta">
             {site.dates} · {site.programme}

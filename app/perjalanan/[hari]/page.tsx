@@ -31,8 +31,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const day = findDay(hari);
   if (!day) return { title: "Halaman tidak ditemukan" };
 
-  const dayPhoto = gallery.find((item) => item.day === day.id)?.photo;
-  const image = dayPhoto ? photos[dayPhoto] : photos.ulunDanu;
+  const dayGallery = gallery.find((item) => item.day === day.id);
+  const image = dayGallery
+    ? "document" in dayGallery
+      ? dayGallery.document
+      : photos[dayGallery.photo]
+    : photos.ulunDanu;
 
   return {
     title: `Hari ${day.id} · ${day.weekday}, ${day.date}`,

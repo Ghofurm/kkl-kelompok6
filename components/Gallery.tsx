@@ -19,7 +19,10 @@ export function Gallery() {
 
   const visible = filter === 0 ? gallery : gallery.filter((item) => item.day === filter);
   const activeItem = activeIndex === null ? null : visible[activeIndex];
-  const activePhoto = activeItem ? photos[activeItem.photo] : null;
+  const activeDocument = activeItem && "document" in activeItem ? activeItem.document : null;
+  const activeExternal =
+    activeItem && !("document" in activeItem) ? photos[activeItem.photo] : null;
+  const activeImage = activeDocument ?? activeExternal;
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -45,8 +48,9 @@ export function Gallery() {
           <div>
             <h2 id="gallery-title">Bingkai dari Bali</h2>
             <p className="section-support">
-              Foto tempat yang kami lewati, dari Kota Lama Semarang sampai Jimbaran. Semua foto di
-              sini berasal dari Wikimedia Commons, bukan dokumentasi kelompok.
+              Potongan perjalanan Kelompok 6 dari Semarang sampai Bali. Sebagian besar foto di sini
+              adalah dokumentasi langsung kami; beberapa tempat yang tidak sempat diabadikan
+              dilengkapi foto dari arsip terbuka.
             </p>
           </div>
 
@@ -67,12 +71,15 @@ export function Gallery() {
 
         <div className="gallery-grid">
           {visible.map((item, index) => {
-            const photo = photos[item.photo];
+            const image = "document" in item ? item.document : photos[item.photo];
+            const key = "document" in item ? item.document.src : item.photo;
+            const tileKey = `${item.day}-${item.place}-${key}`;
+
             return (
               <a
-                key={`${item.photo}-${item.place}`}
+                key={tileKey}
                 className="tile"
-                href={photo.src}
+                href={image.src}
                 onClick={(event) => {
                   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
                   event.preventDefault();
@@ -82,10 +89,10 @@ export function Gallery() {
               >
                 <span className="tile-photo">
                   <img
-                    src={photo.src}
-                    width={photo.width}
-                    height={photo.height}
-                    alt={photo.alt}
+                    src={image.src}
+                    width={image.width}
+                    height={image.height}
+                    alt={image.alt}
                     loading="lazy"
                     decoding="async"
                   />
@@ -102,11 +109,7 @@ export function Gallery() {
         </div>
 
         {visible.length === 0 && (
-          <p className="gallery-empty">
-            {filter === 5
-              ? "Hari 5 hanya berisi perjalanan pulang ke Semarang. Belum ada foto dari hari itu."
-              : "Belum ada foto untuk hari ini. Coba pilih hari lain."}
-          </p>
+          <p className="gallery-empty">Belum ada foto untuk hari ini. Coba pilih hari lain.</p>
         )}
       </div>
 
@@ -119,7 +122,7 @@ export function Gallery() {
           if (event.target === dialogRef.current) setActiveIndex(null);
         }}
       >
-        {activePhoto && activeItem && (
+        {activeImage && activeItem && (
           <div className="lightbox-inner">
             <div className="lightbox-bar">
               <p>
@@ -131,19 +134,23 @@ export function Gallery() {
             </div>
             <img
               className="lightbox-image"
-              src={activePhoto.src}
-              width={activePhoto.width}
-              height={activePhoto.height}
-              alt={activePhoto.alt}
+              src={activeImage.src}
+              width={activeImage.width}
+              height={activeImage.height}
+              alt={activeImage.alt}
             />
             <div className="lightbox-foot">
-              <p>
-                Foto:{" "}
-                <a href={activePhoto.page} target="_blank" rel="noreferrer">
-                  {activePhoto.creator}
-                </a>
-                , {activePhoto.license}, via Wikimedia Commons.
-              </p>
+              {activeDocument ? (
+                <p>Foto: Kelompok 6.</p>
+              ) : activeExternal ? (
+                <p>
+                  Foto:{" "}
+                  <a href={activeExternal.page} target="_blank" rel="noreferrer">
+                    {activeExternal.creator}
+                  </a>
+                  , {activeExternal.license}, via Wikimedia Commons.
+                </p>
+              ) : null}
               <div className="lightbox-nav">
                 <button type="button" onClick={() => step(-1)} aria-label="Foto sebelumnya">
                   Sebelumnya

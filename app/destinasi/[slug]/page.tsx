@@ -52,9 +52,12 @@ export default async function DestinationPage({ params }: { params: Promise<Para
   const next = destinations.find((item) => item.slug === nextSlug) ?? destinations[0];
   const mainPhoto = destination.photo ? photos[destination.photo] : null;
   const dayPhotos = gallery
-    .filter((item) => item.day === destination.day && item.photo !== destination.photo)
-    .slice(0, 4)
-    .map((item) => ({ ...item, source: photos[item.photo] }));
+    .flatMap((item) =>
+      "photo" in item && item.day === destination.day && item.photo !== destination.photo
+        ? [{ ...item, source: photos[item.photo] }]
+        : [],
+    )
+    .slice(0, 4);
 
   return (
     <>
