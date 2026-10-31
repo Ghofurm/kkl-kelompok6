@@ -638,13 +638,24 @@ export const destinations: Destination[] = [
   },
 ];
 
-export const crew = [
-  { name: "Aditya Pratama", nim: "24600001", role: "Ketua kelompok", seat: "06A", initials: "AP" },
-  { name: "Bunga Larasati", nim: "24600002", role: "Dokumentasi", seat: "06B", initials: "BL" },
-  { name: "Caesa Nugraha", nim: "24600003", role: "Logistik", seat: "06C", initials: "CN" },
-  { name: "Dinda Maharani", nim: "24600004", role: "Keuangan", seat: "06D", initials: "DM" },
-  { name: "Elang Saputra", nim: "24600005", role: "Humas", seat: "06E", initials: "ES" },
-  { name: "Fajar Ramadhan", nim: "24600006", role: "Desain & web", seat: "06F", initials: "FR" },
+export type CrewMember = {
+  name: string;
+  nim: string;
+  seat: string;
+  initials: string;
+};
+
+export const crew: CrewMember[] = [
+  { name: "Muchammad Abdul Ghofur", nim: "24670008", seat: "06A", initials: "MAG" },
+  { name: "Farel Ivalyanka Maulana", nim: "24670021", seat: "06B", initials: "FIM" },
+  { name: "Vahrik Cahyo Eko Priyanto", nim: "24670059", seat: "06C", initials: "VCEP" },
+  { name: "Nevri Amelia Putri", nim: "24670061", seat: "06D", initials: "NAP" },
+  { name: "Alvin Praditya Julistyar", nim: "24670070", seat: "06E", initials: "APJ" },
+  { name: "Naufal Hisyam Ramdani", nim: "24670081", seat: "06F", initials: "NHR" },
+  { name: "Juniari Nur Shofa", nim: "24670082", seat: "06G", initials: "JNS" },
+  { name: "Nabilla Annanta Syafi'ie", nim: "24670127", seat: "06H", initials: "NAS" },
+  { name: "Shaktar Marchiano Gyanendra", nim: "24670129", seat: "06I", initials: "SMG" },
+  { name: "Selvy Ana Safara", nim: "24670137", seat: "06J", initials: "SAS" },
 ];
 
 export const gallery = [
@@ -670,7 +681,7 @@ export const stats = [
   { value: "5", caption: "hari perjalanan, dari Selasa sampai Sabtu" },
   { value: "2", caption: "kunjungan industri, inti akademik KKL" },
   { value: "23", caption: "pemberhentian, termasuk transit dan tempat makan" },
-  { value: "6", caption: "anggota kelompok yang menulis jurnal ini" },
+  { value: "10", caption: "anggota kelompok yang menulis jurnal ini" },
 ];
 
 export const nav = [
