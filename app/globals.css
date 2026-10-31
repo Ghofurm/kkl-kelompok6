@@ -1483,25 +1483,6 @@ body:has(.menu-sheet[open]) {
   margin-top: 0.7rem !important;
 }
 
-.passport-fields {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0.75rem;
-  margin-top: auto;
-  padding-top: 1.2rem;
-}
-
-.passport-fields dt {
-  color: var(--paper-muted);
-  font-size: var(--step-small);
-}
-
-.passport-fields dd {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 0.1rem;
-}
-
 .passport-stamp {
   position: absolute;
   top: 3.3rem;

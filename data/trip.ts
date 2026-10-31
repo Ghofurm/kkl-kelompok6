@@ -641,21 +641,20 @@ export const destinations: Destination[] = [
 export type CrewMember = {
   name: string;
   nim: string;
-  seat: string;
   initials: string;
 };
 
 export const crew: CrewMember[] = [
-  { name: "Muchammad Abdul Ghofur", nim: "24670008", seat: "06A", initials: "MAG" },
-  { name: "Farel Ivalyanka Maulana", nim: "24670021", seat: "06B", initials: "FIM" },
-  { name: "Vahrik Cahyo Eko Priyanto", nim: "24670059", seat: "06C", initials: "VCEP" },
-  { name: "Nevri Amelia Putri", nim: "24670061", seat: "06D", initials: "NAP" },
-  { name: "Alvin Praditya Julistyar", nim: "24670070", seat: "06E", initials: "APJ" },
-  { name: "Naufal Hisyam Ramdani", nim: "24670081", seat: "06F", initials: "NHR" },
-  { name: "Juniari Nur Shofa", nim: "24670082", seat: "06G", initials: "JNS" },
-  { name: "Nabilla Annanta Syafi'ie", nim: "24670127", seat: "06H", initials: "NAS" },
-  { name: "Shaktar Marchiano Gyanendra", nim: "24670129", seat: "06I", initials: "SMG" },
-  { name: "Selvy Ana Safara", nim: "24670137", seat: "06J", initials: "SAS" },
+  { name: "Muchammad Abdul Ghofur", nim: "24670008", initials: "MAG" },
+  { name: "Farel Ivalyanka Maulana", nim: "24670021", initials: "FIM" },
+  { name: "Vahrik Cahyo Eko Priyanto", nim: "24670059", initials: "VCEP" },
+  { name: "Nevri Amelia Putri", nim: "24670061", initials: "NAP" },
+  { name: "Alvin Praditya Julistyar", nim: "24670070", initials: "APJ" },
+  { name: "Naufal Hisyam Ramdani", nim: "24670081", initials: "NHR" },
+  { name: "Juniari Nur Shofa", nim: "24670082", initials: "JNS" },
+  { name: "Nabilla Annanta Syafi'ie", nim: "24670127", initials: "NAS" },
+  { name: "Shaktar Marchiano Gyanendra", nim: "24670129", initials: "SMG" },
+  { name: "Selvy Ana Safara", nim: "24670137", initials: "SAS" },
 ];
 
 export const gallery = [

@@ -24,7 +24,7 @@ Semua konten perjalanan ada di satu berkas: `data/trip.ts`.
 
 - `days` — jadwal lima hari dan semua pemberhentian.
 - `destinations` — halaman detail destinasi (slug, cerita, catatan, foto/drawing).
-- `crew` — nama, NIM, kursi, dan inisial anggota.
+- `crew` — nama, NIM, dan inisial anggota.
 - `gallery` — foto yang muncul di galeri dan di halaman detail.
 - `photos` — sumber, ukuran, alt text, dan kredit setiap foto.
 - `site` — judul, deskripsi, tautan PDF laporan, dan metadata kelompok.
@@ -33,12 +33,11 @@ Setelah mengubah data, halaman dan sitemap ikut berubah. Halaman per hari dibuat
 
 ### Yang perlu diganti sebelum dipublikasikan
 
-1. **Kursi anggota** di `crew` masih memakai urutan placeholder 06A–06J. Sesuaikan dengan pembagian kursi bus yang sebenarnya.
-2. **Teks cerita dan catatan lapangan** ditulis sebagai contoh dari jadwal. Ganti dengan pengalaman kelompok yang sebenarnya.
-3. **PDF laporan** di `public/laporan/ringkasan-kkl-kelompok-6.pdf` adalah ringkasan yang dibuat dari data situs. Ganti dengan laporan resmi kelompok atau perbarui lewat `scripts/build-report.mjs`.
-4. **Foto dokumentasi kelompok** belum ada. Foto saat ini adalah foto tempat dari Wikimedia Commons; kreditnya ada di footer dan di `assets/credits.json`. Ganti dengan foto kelompok jika sudah tersedia, lalu perbarui `photos` dan kredit.
-5. **Ejaan nama tempat** seperti "Hotel Quest San Denpasar" dan "Karang Kurnia" perlu dicek ke jadwal resmi.
-6. **URL produksi**: set `NEXT_PUBLIC_SITE_URL` (mis. `https://nama-situs.vercel.app`) agar metadata Open Graph, sitemap, dan robots memakai alamat yang benar.
+1. **Teks cerita dan catatan lapangan** ditulis sebagai contoh dari jadwal. Ganti dengan pengalaman kelompok yang sebenarnya.
+2. **PDF laporan** di `public/laporan/ringkasan-kkl-kelompok-6.pdf` adalah ringkasan yang dibuat dari data situs. Ganti dengan laporan resmi kelompok atau perbarui lewat `scripts/build-report.mjs`.
+3. **Foto dokumentasi kelompok** belum ada. Foto saat ini adalah foto tempat dari Wikimedia Commons; kreditnya ada di footer dan di `assets/credits.json`. Ganti dengan foto kelompok jika sudah tersedia, lalu perbarui `photos` dan kredit.
+4. **Ejaan nama tempat** seperti "Hotel Quest San Denpasar" dan "Karang Kurnia" perlu dicek ke jadwal resmi.
+5. **URL produksi**: set `NEXT_PUBLIC_SITE_URL` (mis. `https://nama-situs.vercel.app`) agar metadata Open Graph, sitemap, dan robots memakai alamat yang benar.
 
 ## Foto
 

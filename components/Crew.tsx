@@ -39,13 +39,6 @@ export function Crew() {
                   <p className="passport-card-label">Paspor KKL · Grup 6</p>
                 </div>
 
-                <dl className="passport-fields">
-                  <div>
-                    <dt>Kursi</dt>
-                    <dd>{member.seat}</dd>
-                  </div>
-                </dl>
-
                 <span className="passport-stamp" aria-hidden="true" data-stamp="BALI|2026" />
               </li>
             );
