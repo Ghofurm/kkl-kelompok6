@@ -67,8 +67,8 @@ export function SiteFooter() {
             ))}
           </ul>
           <p>
-            Foto dokumentasi kelompok belum tersedia. Gambar bertanda sumber di atas adalah foto
-            tempat di Bali dan Semarang, bukan foto kegiatan kelompok.
+            Foto di atas adalah foto tempat dari arsip terbuka, bukan dokumentasi kelompok. Foto
+            dokumentasi Kelompok 6 ditampilkan di galeri.
           </p>
         </details>
       </div>

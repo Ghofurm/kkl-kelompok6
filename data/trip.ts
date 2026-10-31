@@ -14,7 +14,8 @@ export type PhotoKey =
   | "semarangPelni"
   | "semarangKampung"
   | "kutaJerman"
-  | "ulunSide";
+  | "ulunSide"
+  | "upgris";
 
 export type Photo = {
   src: string;
@@ -205,6 +206,17 @@ export const photos: Record<PhotoKey, Photo> = {
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
     page: "https://commons.wikimedia.org/wiki/File:Nusa_Dua_Bali.jpg",
   },
+  upgris: {
+    src: "/images/upgris.jpg",
+    width: 1600,
+    height: 1200,
+    alt: "Gedung dan papan nama IKIP PGRI Semarang, kampus yang kini menjadi Universitas PGRI Semarang.",
+    title: "IKIP PGRI Semarang Jawa Tengah Indonesia",
+    creator: "Puryono",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
+    page: "https://commons.wikimedia.org/wiki/File:IKIP_PGRI_Semarang_Jawa_Tengah_Indonesia.jpg",
+  },
 };
 
 export type StopKind =
@@ -240,7 +252,7 @@ export const site = {
   group: "Kelompok 6",
   programme: "Prodi Informatika, Universitas PGRI Semarang",
   dates: "18–22 Agustus 2026",
-  reportUrl: "/laporan/ringkasan-kkl-kelompok-6.pdf",
+  reportUrl: "/laporan/",
   description:
     "Jurnal lima hari Kuliah Kerja Lapangan Prodi Informatika UPGRIS dari Semarang ke Bali, 18–22 Agustus 2026.",
 };
@@ -657,23 +669,153 @@ export const crew: CrewMember[] = [
   { name: "Selvy Ana Safara", npm: "24670137", initials: "SAS" },
 ];
 
-export const gallery = [
-  { photo: "semarang" as PhotoKey, place: "Kota Lama, Semarang", day: 1, date: "18 Agustus" },
-  { photo: "semarangPelni" as PhotoKey, place: "Jalan Kota Lama, Semarang", day: 1, date: "18 Agustus" },
-  { photo: "semarangKampung" as PhotoKey, place: "Sudut Kota Lama, Semarang", day: 1, date: "18 Agustus" },
-  { photo: "ketapang" as PhotoKey, place: "Pelabuhan Ketapang", day: 1, date: "18 Agustus" },
-  { photo: "joger" as PhotoKey, place: "Joger, Luwus", day: 2, date: "19 Agustus" },
-  { photo: "ulunDanu" as PhotoKey, place: "Ulun Danu Beratan", day: 2, date: "19 Agustus" },
-  { photo: "ulunSide" as PhotoKey, place: "Sisi lain Ulun Danu", day: 2, date: "19 Agustus" },
-  { photo: "rice" as PhotoKey, place: "Sawah bertingkat, Bali", day: 2, date: "19 Agustus" },
-  { photo: "nusaDua" as PhotoKey, place: "Nusa Dua", day: 2, date: "19 Agustus" },
-  { photo: "kutaBeach" as PhotoKey, place: "Pantai Kuta", day: 3, date: "20 Agustus" },
-  { photo: "kutaSunset" as PhotoKey, place: "Kuta menjelang senja", day: 3, date: "20 Agustus" },
-  { photo: "kutaJerman" as PhotoKey, place: "Pantai Jerman, Kuta", day: 3, date: "20 Agustus" },
-  { photo: "pandawa" as PhotoKey, place: "Pantai Pandawa", day: 3, date: "20 Agustus" },
-  { photo: "kecak" as PhotoKey, place: "Tari Kecak", day: 3, date: "20 Agustus" },
-  { photo: "jimbaran" as PhotoKey, place: "Jimbaran", day: 3, date: "20 Agustus" },
-  { photo: "gilimanuk" as PhotoKey, place: "Pelabuhan Gilimanuk", day: 4, date: "21 Agustus" },
+export type GroupPhoto = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+export type GalleryItem = {
+  place: string;
+  day: number;
+  date: string;
+} & (
+  | { photo: PhotoKey }
+  | { document: GroupPhoto }
+);
+
+export const gallery: GalleryItem[] = [
+  {
+    place: "Kampus 1 UPGRIS",
+    day: 1,
+    date: "18 Agustus",
+    document: {
+      src: "/images/dokumentasi/semarang-1.webp",
+      width: 603,
+      height: 1078,
+      alt: "Rombongan KKL berjalan menuju bus di halaman Kampus 1 UPGRIS, Semarang.",
+    },
+  },
+  {
+    place: "PT Victoria Care Indonesia",
+    day: 1,
+    date: "18 Agustus",
+    document: {
+      src: "/images/dokumentasi/victoria-1.webp",
+      width: 2267,
+      height: 4031,
+      alt: "Baliho Herborist dan papan proyek pembangunan pabrik PT Victoria Care Indonesia di tepi jalan.",
+    },
+  },
+  {
+    place: "PT Victoria Care Indonesia",
+    day: 1,
+    date: "18 Agustus",
+    document: {
+      src: "/images/dokumentasi/victoria-2.webp",
+      width: 1920,
+      height: 1080,
+      alt: "Seorang anggota kelompok berbicara dengan mikrofon di dalam area PT Victoria Care Indonesia, dikelilingi peserta KKL.",
+    },
+  },
+  { photo: "ketapang", place: "Pelabuhan Ketapang", day: 1, date: "18 Agustus" },
+
+  {
+    place: "Ulun Danu Beratan",
+    day: 2,
+    date: "19 Agustus",
+    document: {
+      src: "/images/dokumentasi/candikuning-1.webp",
+      width: 2267,
+      height: 4031,
+      alt: "Pura Ulun Danu Beratan di atas pulau kecil di tepi Danau Beratan, dengan langit biru dan tanaman air di depan.",
+    },
+  },
+  {
+    place: "Ulun Danu Beratan",
+    day: 2,
+    date: "19 Agustus",
+    document: {
+      src: "/images/dokumentasi/candikuning-2.webp",
+      width: 1920,
+      height: 1080,
+      alt: "Papan Restoran Ulun Danu Beratan Buffet Lunch dengan patung penjaga dan taman di sekitarnya.",
+    },
+  },
+  { photo: "joger", place: "Joger Luwus", day: 2, date: "19 Agustus" },
+  { photo: "gilimanuk", place: "Pelabuhan Gilimanuk", day: 2, date: "19 Agustus" },
+
+  {
+    place: "Balai Diklat Industri Denpasar",
+    day: 3,
+    date: "20 Agustus",
+    document: {
+      src: "/images/dokumentasi/bdi-1.webp",
+      width: 1920,
+      height: 1080,
+      alt: "Instruktur menunjukkan contoh bahan kayu kepada peserta KKL di dalam ruang praktik Balai Diklat Industri Denpasar.",
+    },
+  },
+  {
+    place: "Balai Diklat Industri Denpasar",
+    day: 3,
+    date: "20 Agustus",
+    document: {
+      src: "/images/dokumentasi/fotobersama-1.webp",
+      width: 3432,
+      height: 1930,
+      alt: "Foto bersama anggota Kelompok 6 di depan gedung Balai Diklat Industri Denpasar.",
+    },
+  },
+  { photo: "kutaSunset", place: "Pantai Kuta", day: 3, date: "20 Agustus" },
+  {
+    place: "Pantai Pandawa",
+    day: 3,
+    date: "20 Agustus",
+    document: {
+      src: "/images/dokumentasi/pandawa-1.webp",
+      width: 1920,
+      height: 1080,
+      alt: "Garis pantai Pandawa dengan bebatuan di tepi, pasir putih, dan perahu di laut biru.",
+    },
+  },
+  {
+    place: "Tari Kecak",
+    day: 3,
+    date: "20 Agustus",
+    document: {
+      src: "/images/dokumentasi/kecak-1.webp",
+      width: 1920,
+      height: 1080,
+      alt: "Puluhan penari Kecak berbaris di panggung kotak-kotak saat pertunjukan malam.",
+    },
+  },
+  {
+    place: "Tari Kecak",
+    day: 3,
+    date: "20 Agustus",
+    document: {
+      src: "/images/dokumentasi/kecak-2.webp",
+      width: 1920,
+      height: 1080,
+      alt: "Penari Kecak tampil di panggung terbuka dengan latar laut saat senja.",
+    },
+  },
+  {
+    place: "Jimbaran",
+    day: 3,
+    date: "20 Agustus",
+    document: {
+      src: "/images/dokumentasi/jimbaran-1.webp",
+      width: 1920,
+      height: 1080,
+      alt: "Panggung malam dengan tulisan #salamikanbakar dan spanduk Makrab Informatika di Jimbaran.",
+    },
+  },
+
+  { photo: "gilimanuk", place: "Gilimanuk ke Ketapang", day: 4, date: "21 Agustus" },
+  { photo: "upgris", place: "Kampus UPGRIS", day: 5, date: "22 Agustus" },
 ];
 
 export const stats = [

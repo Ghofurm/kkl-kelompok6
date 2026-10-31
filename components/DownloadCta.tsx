@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/data/trip";
 
 export function DownloadCta() {
@@ -6,24 +7,24 @@ export function DownloadCta() {
       <div className="wrap cta-grid">
         <div className="cta-note">
           <p>
-            Kalau kamu butuh versi yang bisa dibaca tanpa sinyal, kami sudah merangkum perjalanan ini
-            dalam satu berkas.
+            Laporan final masih dalam proses persetujuan dosen pembimbing. Sementara itu, seluruh
+            cerita perjalanan bisa dibaca langsung di jurnal ini.
           </p>
           <p className="cta-note__small">
-            Lima hari, dua kunjungan industri, dan satu rute yang sama dengan peta di atas.
+            Lima hari, dua kunjungan industri, dan satu rute yang sama dengan halaman per hari.
           </p>
         </div>
 
         <article className="reply-card">
           <h2 id="cta-title">Bawa pulang jurnalnya.</h2>
           <p>
-            Unduh ringkasan perjalanan dalam format PDF. Cocok untuk dibaca di perjalanan atau
-            dilampirkan ke laporan KKL.
+            PDF ringkasan sedang disiapkan. Setelah laporan disetujui, tautan unduhan akan aktif di
+            halaman status laporan.
           </p>
-          <a className="btn btn--ink" href={site.reportUrl} download>
-            Unduh laporan
-          </a>
-          <p className="reply-card__meta">PDF ringkasan · {site.group}</p>
+          <Link className="btn btn--ink" href={site.reportUrl}>
+            Lihat status laporan
+          </Link>
+          <p className="reply-card__meta">Laporan PDF · segera hadir</p>
         </article>
       </div>
     </section>
