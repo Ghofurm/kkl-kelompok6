@@ -638,13 +638,23 @@ export const destinations: Destination[] = [
   },
 ];
 
-export const crew = [
-  { name: "Aditya Pratama", nim: "24600001", role: "Ketua kelompok", seat: "06A", initials: "AP" },
-  { name: "Bunga Larasati", nim: "24600002", role: "Dokumentasi", seat: "06B", initials: "BL" },
-  { name: "Caesa Nugraha", nim: "24600003", role: "Logistik", seat: "06C", initials: "CN" },
-  { name: "Dinda Maharani", nim: "24600004", role: "Keuangan", seat: "06D", initials: "DM" },
-  { name: "Elang Saputra", nim: "24600005", role: "Humas", seat: "06E", initials: "ES" },
-  { name: "Fajar Ramadhan", nim: "24600006", role: "Desain & web", seat: "06F", initials: "FR" },
+export type CrewMember = {
+  name: string;
+  npm: string;
+  initials: string;
+};
+
+export const crew: CrewMember[] = [
+  { name: "Muchammad Abdul Ghofur", npm: "24670008", initials: "MAG" },
+  { name: "Farel Ivalyanka Maulana", npm: "24670021", initials: "FIM" },
+  { name: "Vahrik Cahyo Eko Priyanto", npm: "24670059", initials: "VCEP" },
+  { name: "Nevri Amelia Putri", npm: "24670061", initials: "NAP" },
+  { name: "Alvin Praditya Julistyar", npm: "24670070", initials: "APJ" },
+  { name: "Naufal Hisyam Ramdani", npm: "24670081", initials: "NHR" },
+  { name: "Juniari Nur Shofa", npm: "24670082", initials: "JNS" },
+  { name: "Nabilla Annanta Syafi'ie", npm: "24670127", initials: "NAS" },
+  { name: "Shaktar Marchiano Gyanendra", npm: "24670129", initials: "SMG" },
+  { name: "Selvy Ana Safara", npm: "24670137", initials: "SAS" },
 ];
 
 export const gallery = [
@@ -670,7 +680,7 @@ export const stats = [
   { value: "5", caption: "hari perjalanan, dari Selasa sampai Sabtu" },
   { value: "2", caption: "kunjungan industri, inti akademik KKL" },
   { value: "23", caption: "pemberhentian, termasuk transit dan tempat makan" },
-  { value: "6", caption: "anggota kelompok yang menulis jurnal ini" },
+  { value: "10", caption: "anggota kelompok yang menulis jurnal ini" },
 ];
 
 export const nav = [

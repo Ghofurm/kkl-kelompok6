@@ -24,7 +24,7 @@ Semua konten perjalanan ada di satu berkas: `data/trip.ts`.
 
 - `days` — jadwal lima hari dan semua pemberhentian.
 - `destinations` — halaman detail destinasi (slug, cerita, catatan, foto/drawing).
-- `crew` — nama, NIM, peran, dan kursi anggota.
+- `crew` — nama, NPM, dan inisial anggota.
 - `gallery` — foto yang muncul di galeri dan di halaman detail.
 - `photos` — sumber, ukuran, alt text, dan kredit setiap foto.
 - `site` — judul, deskripsi, tautan PDF laporan, dan metadata kelompok.
@@ -33,29 +33,36 @@ Setelah mengubah data, halaman dan sitemap ikut berubah. Halaman per hari dibuat
 
 ### Yang perlu diganti sebelum dipublikasikan
 
-1. **Nama dan NIM anggota** di `crew` masih data contoh. Ganti dengan data sebenarnya.
-2. **Teks cerita dan catatan lapangan** ditulis sebagai contoh dari jadwal. Ganti dengan pengalaman kelompok yang sebenarnya.
-3. **PDF laporan** di `public/laporan/ringkasan-kkl-kelompok-6.pdf` adalah ringkasan yang dibuat dari data situs. Ganti dengan laporan resmi kelompok atau perbarui lewat `scripts/build-report.mjs`.
-4. **Foto dokumentasi kelompok** belum ada. Foto saat ini adalah foto tempat dari Wikimedia Commons; kreditnya ada di footer dan di `assets/credits.json`. Ganti dengan foto kelompok jika sudah tersedia, lalu perbarui `photos` dan kredit.
-5. **Ejaan nama tempat** seperti "Hotel Quest San Denpasar" dan "Karang Kurnia" perlu dicek ke jadwal resmi.
-6. **URL produksi**: set `NEXT_PUBLIC_SITE_URL` (mis. `https://nama-situs.vercel.app`) agar metadata Open Graph, sitemap, dan robots memakai alamat yang benar.
+1. **Teks cerita dan catatan lapangan** ditulis sebagai contoh dari jadwal. Ganti dengan pengalaman kelompok yang sebenarnya.
+2. **PDF laporan** di `public/laporan/ringkasan-kkl-kelompok-6.pdf` adalah ringkasan yang dibuat dari data situs. Ganti dengan laporan resmi kelompok atau perbarui lewat `scripts/build-report.mjs`.
+3. **Foto dokumentasi kelompok** belum ada. Foto saat ini adalah foto tempat dari Wikimedia Commons; kreditnya ada di footer dan di `assets/credits.json`. Ganti dengan foto kelompok jika sudah tersedia, lalu perbarui `photos` dan kredit.
+4. **Ejaan nama tempat** seperti "Hotel Quest San Denpasar" dan "Karang Kurnia" perlu dicek ke jadwal resmi.
+5. **URL produksi**: set `NEXT_PUBLIC_SITE_URL` (mis. `https://nama-situs.vercel.app`) agar metadata Open Graph, sitemap, dan robots memakai alamat yang benar.
 
 ## Foto
 
 Foto tempat diunduh dari Wikimedia Commons dengan lisensi CC BY, CC BY-SA, atau CC0. Setiap foto dicatat di `assets/credits.json`; daftar kredit ditampilkan di footer situs. Foto-foto ini bukan dokumentasi kegiatan kelompok dan tidak boleh dipresentasikan sebagai foto kelompok.
 
-Foto yang dipakai disimpan sebagai WebP di `public/images/` dan dimuat secara lazy, kecuali foto hero.
+Foto tempat yang dipakai disimpan sebagai WebP di `public/images/` dan dimuat secara lazy, kecuali foto hero.
+
+### Foto profil anggota
+
+Foto profil disimpan terpisah di `public/images/crew/`. Beri nama file sesuai NPM anggota, misalnya `24670008.webp`. Format yang didukung: `.webp`, `.jpg`, `.jpeg`, `.png`, dan `.avif`.
+
+Foto dibaca otomatis saat build. Anggota yang belum punya file foto tetap tampil dengan inisial, jadi menambah atau menghapus foto cukup dengan menaruh atau menghapus file di folder tersebut tanpa mengubah kode.
 
 ## Struktur
 
 ```
-app/                 halaman utama, menu & detail hari, detail destinasi, 404, sitemap, robots
-components/          bagian halaman dan komponen interaktif
-data/trip.ts         seluruh konten perjalanan
-public/images/       foto WebP
-public/laporan/      PDF ringkasan
-scripts/             pembuat PDF ringkasan
-assets/credits.json  catatan sumber foto
+app/                  halaman utama, menu & detail hari, detail destinasi, 404, sitemap, robots
+components/           bagian halaman dan komponen interaktif
+data/trip.ts          seluruh konten perjalanan
+lib/crew-photos.ts    pembaca otomatis foto profil anggota
+public/images/        foto tempat WebP
+public/images/crew/   foto profil anggota (nama file = NPM)
+public/laporan/       PDF ringkasan
+scripts/              pembuat PDF ringkasan
+assets/credits.json   catatan sumber foto
 ```
 
 ## Catatan desain
